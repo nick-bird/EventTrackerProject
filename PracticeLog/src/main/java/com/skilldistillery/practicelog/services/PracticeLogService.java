@@ -10,5 +10,10 @@ public interface PracticeLogService {
 	
 	PracticeLog getLog(int logId);
 	
+	PracticeLog updateLog(int logId, PracticeLog practiceLog);
+	
+	boolean deleteLog(int logId);
+	
+	PracticeLog createLog(PracticeLog practiceLog);
 	
 }

@@ -1,5 +1,9 @@
 package com.skilldistillery.practicelog.entities;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +18,60 @@ public class PracticeLog {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String content;
+	@Column(name = "materials_played")
+	private String materials;
+	
+	@Column(name = "start_time")
+	private LocalDateTime startTime;
+	
+	@Column(name = "end_time")
+	private LocalDateTime endTime;
+	
+	private String notes;
+
+	public String getMaterials() {
+		return materials;
+	}
+	
+	
+	public ArrayList<String> showMaterials(){
+		
+		ArrayList<String> materialsArray = new ArrayList<String>();
+		
+		
+		
+		
+		
+		return null;
+	}
+
+	public void setMaterials(String materials) {
+		this.materials = materials;
+	}
+
+	public LocalDateTime getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(LocalDateTime startTime) {
+		this.startTime = startTime;
+	}
+
+	public LocalDateTime getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(LocalDateTime endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
 
 	public int getId() {
 		return id;
@@ -24,13 +81,7 @@ public class PracticeLog {
 		this.id = id;
 	}
 
-	public String getContent() {
-		return content;
-	}
 
-	public void setContent(String content) {
-		this.content = content;
-	}
 
 	public PracticeLog() {
 		super();
@@ -38,7 +89,19 @@ public class PracticeLog {
 
 	@Override
 	public String toString() {
-		return "PracticeLog [id=" + id + ", content=" + content + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("PracticeLog [id=");
+		builder.append(id);
+		builder.append(", materials=");
+		builder.append(materials);
+		builder.append(", startTime=");
+		builder.append(startTime);
+		builder.append(", endTime=");
+		builder.append(endTime);
+		builder.append(", notes=");
+		builder.append(notes);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	@Override
