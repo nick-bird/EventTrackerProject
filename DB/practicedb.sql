@@ -45,9 +45,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `practicedb`;
-INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (1, 'Carcassi Op. 60 No. 4 | F major scales and coils ', NULL, NULL, 'First page of Carcassi piece at 84 bpm. Scale work at 80 bpm, 100 bpm');
-INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (2, 'Gymnopedie No. 3 | Arpeggios book page 14 | Arpeggios book page 20', NULL, NULL, 'Gymno at 76 bpm, trouble at second bridge - played at 60 bpm.');
-INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (3, 'Sons de Carillhoes | Aguado No. 3, C Major', NULL, NULL, NULL);
+INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (1, 'Carcassi Op. 60 No. 4, F major scales and coils ', NULL, NULL, 'First page of Carcassi piece at 84 bpm. Scale work at 80 bpm, 100 bpm');
+INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (2, 'Gymnopedie No. 3, Arpeggios book page 14, Arpeggios book page 20', NULL, NULL, 'Gymno at 76 bpm, trouble at second bridge - played at 60 bpm.');
+INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (3, 'Sons de Carillhoes, Aguado No. 3, C Major', NULL, NULL, NULL);
 INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (4, 'Just scales', NULL, NULL, 'Played through at 70 bpm, 90 bpm, 110 bpm. Need to work on fretting and tone ');
 INSERT INTO `practice_log` (`id`, `materials_played`, `start_time`, `end_time`, `notes`) VALUES (DEFAULT, 'Sons de Carillhoes', NULL, NULL, NULL);
 
