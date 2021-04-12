@@ -1,7 +1,7 @@
 package com.skilldistillery.practicelog.entities;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,49 +21,32 @@ public class PracticeLog {
 	@Column(name = "materials_played")
 	private String materials;
 	
-	@Column(name = "start_time")
-	private LocalDateTime startTime;
-	
-	@Column(name = "end_time")
-	private LocalDateTime endTime;
+	@Column(name = "time_played")
+	private Integer timePlayed;
 	
 	private String notes;
-
+	
+	
+	
 	public String getMaterials() {
 		return materials;
 	}
 	
-	
-	public ArrayList<String> showMaterials(){
-		
-		ArrayList<String> materialsArray = new ArrayList<String>();
-		
-		
-		
-		
-		
-		return null;
-	}
 
 	public void setMaterials(String materials) {
 		this.materials = materials;
 	}
 
-	public LocalDateTime getStartTime() {
-		return startTime;
+
+	public Integer getTimePlayed() {
+		return timePlayed;
 	}
 
-	public void setStartTime(LocalDateTime startTime) {
-		this.startTime = startTime;
+
+	public void setTimePlayed(Integer timePlayed) {
+		this.timePlayed = timePlayed;
 	}
 
-	public LocalDateTime getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(LocalDateTime endTime) {
-		this.endTime = endTime;
-	}
 
 	public String getNotes() {
 		return notes;
@@ -94,10 +77,8 @@ public class PracticeLog {
 		builder.append(id);
 		builder.append(", materials=");
 		builder.append(materials);
-		builder.append(", startTime=");
-		builder.append(startTime);
-		builder.append(", endTime=");
-		builder.append(endTime);
+		builder.append(", timePlayed=");
+		builder.append(timePlayed);
 		builder.append(", notes=");
 		builder.append(notes);
 		builder.append("]");
