@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice Logs</title>
     <script src="js/script.js"></script> 
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>Welcome to Practice Log Tracker!</h1>
@@ -14,6 +15,22 @@
         <div id="errors"></div>
         <div id="logDetails"></div>
         <div id="logTable"></div>
+        
+        
+        <form name="newLogForm">
+            <label for="materials">Materials Played</label>
+            <input type="text" name="materials" placeholder="Materials"> <br>
+            <label for="notes">Description</label> <br>
+            <textarea rows=4 cols="30" name="notes" placeholder="Notes"></textarea> <br>
+            <label for="timePlayed">Time Played (in minutes)</label>
+            <input type="number"  name="timePlayed"> <br>
+         
+            <button type="submit" name="addLog">Add Log</button>
+          </form>
+        
+        
+        
     </main>
+
 </body>
 </html>

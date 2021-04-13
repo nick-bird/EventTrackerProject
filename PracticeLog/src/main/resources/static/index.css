@@ -1,7 +1,5 @@
-#logTable {
+table, tr, th, td {
+	border: solid 1px;
 	
-	flex: auto;
-	border : 2px;
-	
-	
+	margin: 50px;
 }

@@ -11,7 +11,7 @@ import com.skilldistillery.practicelog.entities.PracticeLog;
 public class PracticeLogApplication extends SpringBootServletInitializer {
 	  @Override
 	  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-	    return application.sources(PracticeLog.class);
+	    return application.sources(PracticeLogApplication.class);
 	  }
 
 	public static void main(String[] args) {

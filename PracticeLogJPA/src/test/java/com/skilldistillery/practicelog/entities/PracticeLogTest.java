@@ -44,6 +44,7 @@ class PracticeLogTest {
 	@Test
 	void test_PracticeLog_entitiy_mapping() {
 		assertNotNull(practiceLog);
+		assertNotNull(practiceLog.getCreatedAt());
 		assertEquals("Carcassi Op. 60 No. 4, F major scales and coils ", practiceLog.getMaterials());
 		assertEquals("First page of Carcassi piece at 84 bpm. Scale work at 80 bpm, 100 bpm", practiceLog.getNotes());
 		assertEquals(40, practiceLog.getTimePlayed());

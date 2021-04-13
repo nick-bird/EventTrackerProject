@@ -1,6 +1,5 @@
 package com.skilldistillery.practicelog.entities;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -23,15 +22,25 @@ public class PracticeLog {
 	
 	@Column(name = "time_played")
 	private Integer timePlayed;
-	
+
 	private String notes;
 	
-	
+	@Column(name="created_at")
+	private LocalDateTime createdAt;
 	
 	public String getMaterials() {
 		return materials;
 	}
 	
+	
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	
+	
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
 
 	public void setMaterials(String materials) {
 		this.materials = materials;
@@ -68,6 +77,7 @@ public class PracticeLog {
 
 	public PracticeLog() {
 		super();
+		this.createdAt = LocalDateTime.now();
 	}
 
 	@Override

@@ -5,7 +5,40 @@ window.addEventListener('load', function (evt) {
 
 function init() {
     loadLogs();
+    document.newLogForm.addLog.addEventListener('click', createLog);
 }
+
+
+function createLog(evt) {
+    evt.preventDefault();
+    console.log('Creating log');
+    let form = document.newLogForm;
+    let log = {
+      materials: form.materials.value,
+      notes: form.notes.value,
+      timePlayed: form.timePlayed.value
+    };
+    
+    postLog(log);
+  }
+  function postLog(log) {
+    console.log('Posting log');
+    console.log(log);
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'api/logs');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 201 || xhr.status === 200) {
+       console.log(log);
+       loadLogs();
+        } else {
+          displayError('Error creating log: ' + xhr.status);
+        }
+      }
+    };
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send(JSON.stringify(log));
+  }
 
 function loadLogs() {
     let xhr = new XMLHttpRequest();
@@ -42,38 +75,47 @@ function displayLogs(logs) {
     let th1 = document.createElement('th');
     let th2 = document.createElement('th');
     let th3 = document.createElement('th');
+    let th4 = document.createElement('th');
     th1.textContent = "Materials played";
     th2.textContent = "Notes";
     th3.textContent = "Time played (in minutes)";
+    th4.textContent = "Entered On"
     let tbody = document.createElement('tbody');
-  
-  
+    
+    
     for (const log of logs) {
         
         let tr = document.createElement('tr');
+        tr.style.border = '1';
         
         let td1 = document.createElement('td');
         td1.textContent = log.materials
-
+        
         let td2 = document.createElement('td');
         td2.textContent = log.notes;
         
         let td3 = document.createElement('td');
         td3.textContent = log.timePlayed;
 
-         tr.appendChild(td1); 
-         tr.appendChild(td2);  
-         tr.appendChild(td3);      
-
+        let td4 = document.createElement('td');
+        td4.textContent = log.createdAt;
+        
+        tr.appendChild(td1); 
+        tr.appendChild(td2);  
+        tr.appendChild(td3);
+        tr.appendChild(td4);      
+        
         tbody.appendChild(tr);
-      
+        
         
     }
     theadtr.appendChild(th1);
     theadtr.appendChild(th2);
     theadtr.appendChild(th3);
+    theadtr.appendChild(th4);
     thead.appendChild(theadtr);
     table.appendChild(thead);
     table.appendChild(tbody);
+
     div.appendChild(table);
 }
