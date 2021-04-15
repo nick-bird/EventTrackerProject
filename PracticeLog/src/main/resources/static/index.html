@@ -16,8 +16,8 @@
         <div id="logDetails"></div>
         <div id="logTable"></div>
         
-        <h2>Add a new log</h2>
         <form name="newLogForm">
+            <h2>Add a new log</h2>
             <label for="materials">Materials Played</label>
             <input type="text" name="materials" placeholder="Materials"> <br>
             <label for="notes">Description</label> <br>
@@ -28,7 +28,17 @@
             <button type="submit" name="addLog">Add Log</button>
           </form>
         
-        
+          <form name="updateForm" id= "updateForm">
+            <label for="materials">Materials Played</label>
+            <input  name="materials" placeholder="Materials"> <br>
+            <label for="notes">Description</label> <br>
+            <input name="notes"  placeholder="Notes"></input> <br>
+            <label for="timePlayed">Time Played (in minutes)</label>
+            <input type="number"  name="timePlayed" > <br>
+         
+            <button id="updateLog" type="submit" name="updateLog">Update Log</button>
+            <button id="deleteLog" type="submit" name="deleteLog">Delete Log</button>
+            </form>
         
     </main>
 
