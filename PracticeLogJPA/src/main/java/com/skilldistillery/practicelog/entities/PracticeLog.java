@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "practice_log")
 public class PracticeLog {
@@ -25,7 +27,9 @@ public class PracticeLog {
 
 	private String notes;
 	
+	
 	@Column(name="created_at")
+	@CreationTimestamp
 	private LocalDateTime createdAt;
 	
 	public String getMaterials() {
@@ -77,7 +81,6 @@ public class PracticeLog {
 
 	public PracticeLog() {
 		super();
-		this.createdAt = LocalDateTime.now();
 	}
 
 	@Override

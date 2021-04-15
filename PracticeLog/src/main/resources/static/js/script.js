@@ -20,6 +20,7 @@ function createLog(evt) {
     };
     
     postLog(log);
+    form.reset();
   }
   function postLog(log) {
     console.log('Posting log');
@@ -31,6 +32,8 @@ function createLog(evt) {
         if (xhr.status === 201 || xhr.status === 200) {
        console.log(log);
        loadLogs();
+       
+
         } else {
           displayError('Error creating log: ' + xhr.status);
         }
@@ -65,6 +68,7 @@ function displayError(msg) {
 
 function displayLogs(logs) {
     let div = document.getElementById('logTable');
+    div.textContent = '';
     // TODO: Make a beatiful table
 
     // TODO: Add click event for the trs to get log by id,
