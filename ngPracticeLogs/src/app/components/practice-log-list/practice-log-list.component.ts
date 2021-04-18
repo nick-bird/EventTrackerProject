@@ -12,7 +12,7 @@ export class PracticeLogListComponent implements OnInit {
 
 
   logs: PracticeLog[] = [];
-
+  totalMinutes: number;
   selected: PracticeLog = null;
   newLog: PracticeLog = new PracticeLog();
   editLog: PracticeLog = null;
@@ -38,6 +38,19 @@ loadLogs(): void{
 
     }
   )
+}
+
+geTimePlayed(){
+ let total = 0;
+
+ let hours = 0;
+ for(let i = 0; i < this.logs.length; i++){
+    total += this.logs[i].timePlayed;
+  }
+  hours = total / 60;
+  total = total % 60;
+  hours = Math.trunc(hours);
+  return "Total time played: " + hours + " hours and " + total + " minutes" ;
 }
 
 reload() {
