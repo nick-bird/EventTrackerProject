@@ -1,0 +1,39 @@
+<h1>Practice Log Tracker</h1>
+<div *ngIf='selected&&!editLog'>
+
+<strong>Log Id:</strong>  <p>{{selected.id}}</p>
+<strong>Materials Played:</strong>  <p>{{selected.materials}}</p>
+<strong>Notes:</strong>  <p>{{selected.notes}}</p>
+<strong>Minutes played:</strong>  <p>{{selected.timePlayed}}</p>
+  <button (click)='setEditLog()'>Edit</button>
+  <button (click)='displayTable()'>Back</button>
+</div>
+<div *ngIf='editLog'>
+  Materials: <input type="text" [(ngModel)]='editLog.materials'>
+  Notes: <input type="text" [(ngModel)]='editLog.notes'>
+  Time played (in minutes): <input type="number" [(ngModel)]='editLog.timePlayed'>
+  <button (click)='updateLog(editLog)'>Save</button><button (click)='editLog = null'>Cancel</button>
+</div>
+<table *ngIf='!selected'>
+  <thead>
+    <th>Materials Played</th>
+    <th>Notes</th>
+    <th>Minutes Played</th>
+    <th>Log Entered</th>
+  </thead>
+  <tbody>
+   <tr *ngFor='let log of logs'>
+      <td  (click)='displayLog(log)'>{{log.materials}}</td>
+      <td>{{log.notes}} </td>
+      <td>{{log.timePlayed}}</td>
+      <td>{{log.createdAt | date:'short'}}</td>
+      <td><button (click)='deleteLog(log.id)'>X</button></td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf='!selected'>
+Materials played: <input type="text" [(ngModel)]='newLog.materials' />
+Minutes played: <input type="number"  [(ngModel)]='newLog.timePlayed' >
+Notes: <input type="text" [(ngModel)]='newLog.notes'>
+  <button (click)='addLog()'>Add Log</button>
+</div>

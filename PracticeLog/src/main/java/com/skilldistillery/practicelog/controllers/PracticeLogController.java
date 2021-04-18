@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.skilldistillery.practicelog.entities.PracticeLog;
 import com.skilldistillery.practicelog.services.PracticeLogService;
 
+@CrossOrigin({"*", "http://localhost:4300"})
 @RequestMapping("api")
 @RestController
 public class PracticeLogController {
